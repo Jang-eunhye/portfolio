@@ -3,6 +3,7 @@ import type { Project } from "@/types/project";
 import { PlatformStatusList } from "./PlatformStatusList";
 import { SectionHeading } from "./SectionHeading";
 import { MediaPlaceholder } from "./MediaPlaceholder";
+import { ServiceLink } from "./ServiceLink";
 
 interface ProjectDetailProps {
   project: Project;
@@ -32,17 +33,9 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         </p>
 
         {project.serviceLinks.length > 0 && (
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-3">
             {project.serviceLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg border border-border px-4 py-2 text-[0.875rem] font-medium underline decoration-neutral-300 underline-offset-2 transition-all hover:border-neutral-400 hover:bg-neutral-50 hover:decoration-neutral-500"
-              >
-                {link.label} →
-              </a>
+              <ServiceLink key={link.label} label={link.label} url={link.url} />
             ))}
           </div>
         )}

@@ -56,7 +56,7 @@ export const projects: Project[] = [
       },
     ],
     tech: ["React", "TypeScript", "Supabase", "Vercel"],
-    serviceLinks: [{ label: "Web", url: "https://example.com" }],
+    serviceLinks: [{ label: "Web", url: "https://haedda.vercel.app" }],
   },
   {
     slug: "walkaholic",
