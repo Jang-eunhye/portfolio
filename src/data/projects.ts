@@ -8,8 +8,8 @@ export const projects: Project[] = [
     description: "나만의 보상으로 미루는 습관 개선을 돕는 할 일 앱",
     platformStatuses: [
       { platform: "Web", status: "released" },
-      { platform: "Android", status: "upcoming" },
-      { platform: "iOS", status: "upcoming" },
+      { platform: "Android", status: "in-development" },
+      { platform: "iOS", status: "in-development" },
     ],
     thumbnail: "/projects/haedda/thumbnail.png",
     featured: true,
@@ -65,7 +65,7 @@ export const projects: Project[] = [
       "걸음 수 기반 레벨을 통해 산책 습관을 재밌게 이어가도록 돕는 산책 앱",
     description:
       "걸음 수 기반 레벨을 통해 산책 습관을 재밌게 이어가도록 돕는 산책 앱",
-    platformStatuses: [{ platform: "Android", status: "beta" }],
+    platformStatuses: [{ platform: "Android", status: "released" }],
     thumbnail: "/projects/walkaholic/thumbnail.png",
     featured: true,
     intro:
