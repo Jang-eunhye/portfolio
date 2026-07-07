@@ -12,6 +12,7 @@ export const projects: Project[] = [
       { platform: "iOS", status: "in-development" },
     ],
     thumbnail: "/projects/haedda/thumbnail.png",
+    logo: "/projects/haedda/icon.png",
     featured: true,
     intro: "나만의 보상으로 미루는 습관 개선을 돕는 할 일 앱",
     whyBuilt: [
@@ -67,6 +68,7 @@ export const projects: Project[] = [
       "걸음 수 기반 레벨을 통해 산책 습관을 재밌게 이어가도록 돕는 산책 앱",
     platformStatuses: [{ platform: "Android", status: "released" }],
     thumbnail: "/projects/walkaholic/thumbnail.png",
+    logo: "/projects/walkaholic/icon.png",
     featured: true,
     intro:
       "걸음 수를 레벨로 쌓으며 산책 습관을 재밌게 이어가도록 돕는 Android 앱",
@@ -110,7 +112,7 @@ export const projects: Project[] = [
     serviceLinks: [
       {
         label: "Android",
-        url: "https://play.google.com/store/apps/details?id=example",
+        url: "https://play.google.com/store/apps/details?id=com.eunhye99.walkaholic",
       },
     ],
   },

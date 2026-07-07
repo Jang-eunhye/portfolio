@@ -36,6 +36,7 @@ export interface Project {
   description: string;
   platformStatuses: PlatformStatus[];
   thumbnail?: string;
+  logo?: string;
   intro: string;
   whyBuilt: string[];
   features: ProjectFeature[];

@@ -1,3 +1,6 @@
+import Image from "next/image";
+import type { ProjectPlatform } from "@/types/project";
+
 function ExternalLinkIcon() {
   return (
     <svg
@@ -17,35 +20,50 @@ function ExternalLinkIcon() {
   );
 }
 
-function getServiceLinkText(label: string, url: string): string {
-  if (label === "Web") {
-    try {
-      return new URL(url).hostname;
-    } catch {
-      return "웹사이트 방문";
-    }
+const platformLinkConfig: Record<
+  ProjectPlatform,
+  { text: string; icon?: string }
+> = {
+  Web: { text: "웹사이트 방문" },
+  Android: { text: "Google Play Store", icon: "/icons/google-play.png" },
+  iOS: { text: "App Store" },
+};
+
+function getWebLinkText(url: string): string {
+  try {
+    return new URL(url).hostname;
+  } catch {
+    return platformLinkConfig.Web.text;
   }
-  if (label === "Android") return "Google Play에서 보기";
-  if (label === "iOS") return "App Store에서 보기";
-  return url;
 }
 
 interface ServiceLinkProps {
-  label: string;
+  label: ProjectPlatform;
   url: string;
 }
 
 export function ServiceLink({ label, url }: ServiceLinkProps) {
-  const text = getServiceLinkText(label, url);
+  const config = platformLinkConfig[label];
+  const text = label === "Web" ? getWebLinkText(url) : config.text;
 
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-[0.9375rem] font-medium text-foreground transition-[border-color,background-color] duration-200 hover:border-neutral-500 hover:bg-neutral-50"
+      className="inline-flex items-center gap-2 rounded-lg border border-border bg-white px-3 py-1.5 text-[0.875rem] font-medium text-foreground transition-colors duration-200 hover:border-neutral-400 hover:bg-subtle"
     >
-      <ExternalLinkIcon />
+      {config.icon ? (
+        <Image
+          src={config.icon}
+          alt=""
+          width={16}
+          height={16}
+          className="h-4 w-4 shrink-0"
+        />
+      ) : (
+        <ExternalLinkIcon />
+      )}
       <span>{text}</span>
     </a>
   );

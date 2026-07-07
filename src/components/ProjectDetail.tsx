@@ -1,9 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/types/project";
-import { PlatformStatusList } from "./PlatformStatusList";
+import { PlatformLinks } from "./PlatformLinks";
 import { SectionHeading } from "./SectionHeading";
 import { MediaPlaceholder } from "./MediaPlaceholder";
-import { ServiceLink } from "./ServiceLink";
 
 interface ProjectDetailProps {
   project: Project;
@@ -20,25 +20,33 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
       </Link>
 
       <header className="mb-12 border-b border-border pb-10">
-        <h1 className="text-2xl font-semibold tracking-tight md:text-[1.75rem]">
-          {project.name}
-        </h1>
-
-        <div className="mt-4">
-          <PlatformStatusList items={project.platformStatuses} />
+        <div className="flex items-center gap-5">
+          {project.logo && (
+            <div className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-2xl border border-border bg-white p-2">
+              <Image
+                src={project.logo}
+                alt=""
+                width={52}
+                height={52}
+                className="h-full w-full object-contain"
+              />
+            </div>
+          )}
+          <h1 className="text-2xl font-semibold tracking-tight md:text-[1.75rem]">
+            {project.name}
+          </h1>
         </div>
 
-        <p className="mt-5 max-w-2xl text-[0.9375rem] leading-relaxed text-muted md:text-base">
+        <div className="mt-6">
+          <PlatformLinks
+            platformStatuses={project.platformStatuses}
+            serviceLinks={project.serviceLinks}
+          />
+        </div>
+
+        <p className="mt-6 max-w-2xl text-[0.9375rem] leading-relaxed text-muted md:text-base">
           {project.intro}
         </p>
-
-        {project.serviceLinks.length > 0 && (
-          <div className="mt-6 flex flex-wrap gap-3">
-            {project.serviceLinks.map((link) => (
-              <ServiceLink key={link.label} label={link.label} url={link.url} />
-            ))}
-          </div>
-        )}
       </header>
 
       <section className="mb-12">
