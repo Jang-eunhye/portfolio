@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { walkaholic } from "@/data/projects/walkaholic";
 import { ProjectPageLayout } from "@/components/project/ProjectPageLayout";
 import { ProjectHeader } from "@/components/project/ProjectHeader";
 import { ProjectSection } from "@/components/project/ProjectSection";
@@ -9,8 +8,9 @@ import { ProjectDecisions } from "@/components/project/ProjectDecisions";
 import { ProjectTech } from "@/components/project/ProjectTech";
 
 export const metadata: Metadata = {
-  title: `${walkaholic.name} | 장은혜`,
-  description: walkaholic.intro,
+  title: "워커홀릭 | 장은혜",
+  description:
+    "걸음 수를 레벨로 쌓으며 산책 습관을 재밌게 이어가도록 돕는 Android 앱",
 };
 
 export default function WalkaholicPage() {
@@ -18,27 +18,70 @@ export default function WalkaholicPage() {
     <main className="flex-1">
       <ProjectPageLayout>
         <ProjectHeader
-          name={walkaholic.name}
-          logo={walkaholic.logo}
-          intro={walkaholic.intro}
-          platformStatuses={walkaholic.platformStatuses}
-          serviceLinks={walkaholic.serviceLinks}
+          name="Walkaholic"
+          logo="/projects/walkaholic/icon.png"
+          intro="걸음 수를 레벨로 쌓으며 산책 습관을 재밌게 이어가도록 돕는 Android 앱"
+          platformStatuses={[
+            { platform: "Android", status: "released" },
+          ]}
+          serviceLinks={[
+            {
+              label: "Android",
+              url: "https://play.google.com/store/apps/details?id=com.eunhye99.walkaholic",
+            },
+          ]}
         />
 
         <ProjectSection title="해결하고자 한 문제">
-          <ProjectTextBlock paragraphs={walkaholic.whyBuilt} />
+          <ProjectTextBlock
+            paragraphs={[
+              "산책 앱은 기록만 남기고 동기가 금방 사라지는 경우가 많았습니다.",
+              "걸음 수가 쌓일수록 성장하는 경험을 통해, 산책을 습관으로 이어가고 싶었습니다.",
+            ]}
+          />
         </ProjectSection>
 
         <ProjectSection title="주요 기능">
-          <ProjectScreenshots items={walkaholic.screenshots} />
+          <ProjectScreenshots
+            items={[
+              {
+                title: "걸음 수",
+                description: "하루 걸음 수를 자동으로 집계",
+                image: "/projects/walkaholic/feature-steps.png",
+              },
+              {
+                title: "레벨",
+                description: "걸음 수에 따라 레벨이 올라가는 성장 시스템",
+                image: "/projects/walkaholic/feature-level.png",
+              },
+              {
+                title: "기록",
+                description: "주간·월간 산책 패턴 확인",
+                image: "/projects/walkaholic/feature-stats.png",
+              },
+            ]}
+          />
         </ProjectSection>
 
         <ProjectSection title="개선 과정 또는 해결 방법">
-          <ProjectDecisions items={walkaholic.decisions} />
+          <ProjectDecisions
+            items={[
+              {
+                question: "왜 걸음 수를 레벨 시스템과 연결했는가",
+                answer:
+                  "숫자만 쌓이는 것보다 성장하는 느낌이 습관 유지에 더 효과적이라고 판단했습니다. 레벨업 경험이 다음 산책으로 이어지는 동기가 되도록 설계했습니다.",
+              },
+              {
+                question: "왜 Android로만 출시했는가",
+                answer:
+                  "걸음 수 연동과 백그라운드 동작을 우선 검증하기 위해 네이티브 앱부터 만들었습니다. 웹 버전은 현재 범위에 포함하지 않았습니다.",
+              },
+            ]}
+          />
         </ProjectSection>
 
         <ProjectSection title="기술" className="mb-0">
-          <ProjectTech items={walkaholic.tech} />
+          <ProjectTech items={["React Native", "TypeScript", "Expo"]} />
         </ProjectSection>
       </ProjectPageLayout>
     </main>
