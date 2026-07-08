@@ -30,7 +30,7 @@ export type Project = ProjectSummary;
 
 export interface ProjectScreenshot {
   title: string;
-  description: string;
+  description?: string;
   image?: string;
 }
 

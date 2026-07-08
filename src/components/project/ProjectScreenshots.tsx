@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ProjectScreenshot } from "@/types/project";
 import { MediaPlaceholder } from "@/components/MediaPlaceholder";
 
@@ -15,16 +16,29 @@ export function ProjectScreenshots({ items }: ProjectScreenshotsProps) {
         >
           <div>
             <h3 className="font-medium">{item.title}</h3>
-            <p className="mt-1 text-[0.875rem] leading-relaxed text-muted">
-              {item.description}
-            </p>
+            {item.description && (
+              <p className="mt-1 whitespace-pre-line text-[0.875rem] leading-relaxed text-muted">
+                {item.description}
+              </p>
+            )}
           </div>
-          <MediaPlaceholder
-            label={`${item.title} 스크린샷`}
-            hint={item.image}
-            aspectRatio="phone"
-            className="overflow-hidden rounded-lg"
-          />
+          {item.image ? (
+            <div className="relative aspect-1080/2170 overflow-hidden rounded-lg border border-border bg-subtle">
+              <Image
+                src={item.image}
+                alt={`${item.title} 스크린샷`}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover"
+              />
+            </div>
+          ) : (
+            <MediaPlaceholder
+              label={`${item.title} 스크린샷`}
+              aspectRatio="phone"
+              className="overflow-hidden rounded-lg"
+            />
+          )}
         </div>
       ))}
     </div>

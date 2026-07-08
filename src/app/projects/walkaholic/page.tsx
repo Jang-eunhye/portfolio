@@ -41,23 +41,72 @@ export default function WalkaholicPage() {
           />
         </ProjectSection>
 
-        <ProjectSection title="주요 기능">
+        <ProjectSection title="스크린샷(ver2)">
           <ProjectScreenshots
             items={[
               {
-                title: "걸음 수",
-                description: "하루 걸음 수를 자동으로 집계",
-                image: "/projects/walkaholic/feature-steps.png",
+                title: "홈 대시보드",
+                description:
+                  "오늘의 걸음 수와 현재 레벨,\n주간 현황을 한 화면에서 확인할 수 있습니다.",
+                image: "/projects/walkaholic/screenshot1.jpg",
               },
               {
-                title: "레벨",
-                description: "걸음 수에 따라 레벨이 올라가는 성장 시스템",
-                image: "/projects/walkaholic/feature-level.png",
+                title: "캘린더",
+                description:
+                  "달력에서 날짜별 걸음 수와 주간 레벨을 조회하고,\n통계로 걸음 패턴을 확인할 수 있습니다.",
+                image: "/projects/walkaholic/screenshot2.jpg",
               },
               {
-                title: "기록",
-                description: "주간·월간 산책 패턴 확인",
-                image: "/projects/walkaholic/feature-stats.png",
+                title: "날씨",
+                description:
+                  "현재 위치의 날씨 정보와 함께,\n산책 시 참고할 수 있는 주의 문구를 제공합니다.",
+                image: "/projects/walkaholic/screenshot3.jpg",
+              },
+            ]}
+          />
+        </ProjectSection>
+
+        <ProjectSection title="변경 사항">
+          <ProjectDecisions
+            items={[
+              {
+                question: "산책 시작·종료 버튼 → 걸음 수 자동 집계",
+                answer:
+                  "매번 산책을 시작하고 종료할 때마다 버튼을 눌러야 해 번거로웠습니다.\n걸음 수를 자동으로 집계하는 방식으로 바꿔, 앱을 켜지 않아도 산책이 기록되도록 개선했습니다.",
+              },
+              {
+                question: "Health Connect 연동",
+                answer:
+                  "걸음 수를 앱 내부에서 따로 계산하기보다, Health Connect와 연동해 기기에 기록된 값을 가져오도록 했습니다.\n더 정확한 걸음 수를 바탕으로 레벨과 기록이 반영되도록 개선했습니다.",
+              },
+              {
+                question: "새싹 키우기 → 레벨 시스템",
+                answer:
+                  "새싹을 키우는 콘셉트는 따뜻했지만, 과하게 감성적이고 어린 느낌이 났습니다.\n걸음 수에 따라 오르는 레벨 시스템으로 바꿔, 연령대와 관계없이 누구나 부담 없이 쓸 수 있도록 다듬었습니다.",
+              },
+              {
+                question: "발자국 도장 콘셉트 도입",
+                answer:
+                  "만 보를 달성한 날은 캘린더에 발자국 도장을 찍어,\n목표를 이룬 날을 한눈에 직관적으로 확인할 수 있도록 했습니다.",
+              },
+            ]}
+          />
+        </ProjectSection>
+
+        <ProjectSection title="스크린샷(ver1)">
+          <ProjectScreenshots
+            items={[
+              {
+                title: "홈 대시보드",
+                image: "/projects/walkaholic/ver1_screenshot1.jpg",
+              },
+              {
+                title: "캘린더",
+                image: "/projects/walkaholic/ver1_screenshot2.jpg",
+              },
+              {
+                title: "날씨",
+                image: "/projects/walkaholic/ver1_screenshot3.jpg",
               },
             ]}
           />
