@@ -22,6 +22,7 @@ export interface ProjectSummary {
   name: string;
   tagline: string;
   thumbnail?: string;
+  logo?: string;
   platformStatuses: PlatformStatus[];
   featured: boolean;
 }
