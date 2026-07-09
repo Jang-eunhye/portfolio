@@ -4,7 +4,6 @@ import { ProjectHeader } from "@/components/project/ProjectHeader";
 import { ProjectSection } from "@/components/project/ProjectSection";
 import { ProjectScreenshots } from "@/components/project/ProjectScreenshots";
 import { ProjectDecisions } from "@/components/project/ProjectDecisions";
-import { ProjectTech } from "@/components/project/ProjectTech";
 
 export const metadata: Metadata = {
   title: "워커홀릭 | 장은혜",
@@ -136,7 +135,7 @@ export default function WalkaholicPage() {
           />
         </ProjectSection>
 
-        <ProjectSection title="스크린샷(ver1)" divided>
+        <ProjectSection title="스크린샷(ver1)" divided className="mb-0">
           <ProjectScreenshots
             items={[
               {
@@ -153,27 +152,6 @@ export default function WalkaholicPage() {
               },
             ]}
           />
-        </ProjectSection>
-
-        <ProjectSection title="개선 과정 또는 해결 방법" divided>
-          <ProjectDecisions
-            items={[
-              {
-                question: "왜 걸음 수를 레벨 시스템과 연결했는가",
-                answer:
-                  "숫자만 쌓이는 것보다 성장하는 느낌이 습관 유지에 더 효과적이라고 판단했습니다. 레벨업 경험이 다음 산책으로 이어지는 동기가 되도록 설계했습니다.",
-              },
-              {
-                question: "왜 Android로만 출시했는가",
-                answer:
-                  "걸음 수 연동과 백그라운드 동작을 우선 검증하기 위해 네이티브 앱부터 만들었습니다. 웹 버전은 현재 범위에 포함하지 않았습니다.",
-              },
-            ]}
-          />
-        </ProjectSection>
-
-        <ProjectSection title="기술" divided className="mb-0">
-          <ProjectTech items={["React Native", "TypeScript", "Expo"]} />
         </ProjectSection>
       </ProjectPageLayout>
     </main>
