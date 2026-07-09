@@ -90,19 +90,19 @@ export default function WalkaholicPage() {
                 title: "홈 대시보드",
                 description:
                   "오늘의 걸음 수와 현재 레벨,\n주간 현황을 한 화면에서 확인할 수 있습니다.",
-                image: "/projects/walkaholic/screenshot1.jpg",
+                image: "/projects/walkaholic/home-dashboard.jpg",
               },
               {
                 title: "캘린더",
                 description:
                   "달력에서 날짜별 걸음 수와 주간 레벨을 조회하고,\n통계로 걸음 패턴을 확인할 수 있습니다.",
-                image: "/projects/walkaholic/screenshot2.jpg",
+                image: "/projects/walkaholic/calendar.jpg",
               },
               {
                 title: "날씨",
                 description:
                   "현재 위치의 날씨 정보와 함께,\n산책 시 참고할 수 있는 주의 문구를 제공합니다.",
-                image: "/projects/walkaholic/screenshot3.jpg",
+                image: "/projects/walkaholic/weather.jpg",
               },
             ]}
           />
@@ -140,15 +140,15 @@ export default function WalkaholicPage() {
             items={[
               {
                 title: "홈 대시보드",
-                image: "/projects/walkaholic/ver1_screenshot1.jpg",
+                image: "/projects/walkaholic/ver1-home-dashboard.jpg",
               },
               {
                 title: "캘린더",
-                image: "/projects/walkaholic/ver1_screenshot2.jpg",
+                image: "/projects/walkaholic/ver1-calendar.jpg",
               },
               {
                 title: "날씨",
-                image: "/projects/walkaholic/ver1_screenshot3.jpg",
+                image: "/projects/walkaholic/ver1-weather.jpg",
               },
             ]}
           />
