@@ -6,7 +6,7 @@ export const projects: ProjectSummary[] = [
     name: "해따",
     tagline: "나만의 보상으로 미루는 습관 개선을 돕는 할 일 앱",
     thumbnail: "/projects/haedda/thumbnail.png",
-    logo: "/projects/haedda/iicon.png",
+    logo: "/projects/haedda/icon.png",
     platformStatuses: [
       { platform: "Web", status: "released" },
       { platform: "Android", status: "in-development" },

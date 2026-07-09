@@ -15,7 +15,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       className="group flex flex-col overflow-hidden rounded-xl border border-neutral-300 bg-white transition-[transform,border-color] duration-200 ease-out hover:scale-[1.04] hover:border-neutral-500"
     >
       {project.logo ? (
-        <div className="relative aspect-[16/10] overflow-hidden bg-subtle">
+        <div className="relative aspect-[16/10] overflow-hidden bg-white">
           <Image
             src={project.logo}
             alt=""
@@ -33,7 +33,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         />
       )}
 
-      <div className="flex flex-1 flex-col gap-3 p-5">
+      <div className="flex flex-1 flex-col gap-3 border-t border-border p-5">
         <div>
           <h3 className="text-[1.0625rem] font-semibold text-foreground">
             {project.name}
