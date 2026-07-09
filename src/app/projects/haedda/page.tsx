@@ -82,14 +82,8 @@ export default function HaeddaPage() {
                 반복 주기로 설정할 수 있습니다.
               </p>
               <ul className="mt-3 space-y-2 rounded-lg bg-subtle px-4 py-3 text-[0.875rem] text-muted">
-                <li className="flex gap-2">
-                  <span className="text-brand">·</span>
-                  <span>미완료·연속완료 횟수 표시</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-brand">·</span>
-                  <span>완료 시 다음 주기로 자동 갱신</span>
-                </li>
+                <li>미완료·연속 완료 횟수 표시</li>
+                <li>완료·기한 만료 시 다음 주기로 자동 갱신 (기한 만료 시 미완료 횟수 카운트)</li>
               </ul>
             </div>
 
@@ -99,18 +93,14 @@ export default function HaeddaPage() {
                 카테고리별로 할 일 목록을 필터링해 볼 수 있습니다.
               </p>
               <ul className="mt-3 space-y-2 rounded-lg bg-subtle px-4 py-3 text-[0.875rem] text-muted">
-                <li className="flex gap-2">
-                  <span className="text-brand">·</span>
-                  <span>카테고리 추가·수정·삭제 가능</span>
-                </li>
+                <li>카테고리 추가·수정·삭제 가능</li>
               </ul>
             </div>
 
             <div>
               <p className="font-medium text-foreground">놓친 할일 배너</p>
               <p className="mt-2 text-muted">
-                기한이 지났거나, 반복 할 일 중 미완료 횟수가 남아 있는
-                할 일을 모아서 보여줍니다.
+                기한이 지났거나, 반복 할 일 중 미완료 횟수가 있는 할 일을 모아서 보여줍니다.
               </p>
             </div>
           </div>
