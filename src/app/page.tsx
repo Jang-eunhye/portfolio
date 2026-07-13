@@ -3,7 +3,7 @@ import { Projects } from "@/components/Projects";
 
 export default function Home() {
   return (
-    <main className="flex-1">
+    <main className="flex min-h-full flex-1 flex-col">
       <Profile />
       <Projects />
     </main>
